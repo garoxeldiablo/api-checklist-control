@@ -7,6 +7,7 @@ import { checkLists } from "../controller/checklists.js";
 import { addTask } from "../controller/tasksFromManager.js";
 import { updateTaskMandatoryStatus } from "../controller/updateTaskFromStaff.js";
 import { submitTask } from "../controller/submissionStaff.js";
+import { getTask } from "../controller/taskView.js";
 
 const router = express.Router();
 
@@ -20,6 +21,7 @@ router.put('/tasks/:taskId/mandatory', updateTaskMandatoryStatus);
 
 router.get('/users', verifyToken, getUsers);
 router.get('/token', refreshToken);
+router.get('/tasks', getTask);
 
 
 router.delete('/logout', logout);
