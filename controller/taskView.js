@@ -5,7 +5,7 @@ export const getTask = async(req, res) =>{
 
     try {
         // Query untuk menambahkan data ke tabel tasks
-        const [task] = await query(queryGet);
+        const task = await query(queryGet);
 
         const tasks = task;
         res.status(201).json({tasks})
