@@ -12,6 +12,6 @@ export const getTask = async(req, res) =>{
 
     } catch (error) {
         console.error('Error get task:', error);
-        return res.status(500).json({ error: 'internal server error' });
+        res.status(500).json({ error: 'internal server error' });
     }
 }

@@ -6,8 +6,9 @@ import { refreshToken } from "../controller/RefreshToken.js";
 import { checkLists } from "../controller/checklists.js";
 import { addTask } from "../controller/tasksFromManager.js";
 import { updateTaskMandatoryStatus } from "../controller/updateTaskFromStaff.js";
-import { submitTask } from "../controller/submissionStaff.js";
 import { getTask } from "../controller/taskView.js";
+import { createSubmission } from "../controller/submission.js";
+import { getSubmission } from "../controller/submissionView.js";
 
 const router = express.Router();
 
@@ -15,13 +16,14 @@ router.post('/register', register);
 router.post('/login', login);
 router.post('/addchecklists', checkLists)
 router.post('/addtask', addTask)
-router.post('/submitTask', submitTask)
+router.post('/submitTask/:id_user', createSubmission)
 
 router.put('/tasks/:taskId/mandatory', updateTaskMandatoryStatus);
 
 router.get('/users', verifyToken, getUsers);
 router.get('/token', refreshToken);
 router.get('/tasks', getTask);
+router.get('/submissions', getSubmission)
 
 
 router.delete('/logout', logout);
