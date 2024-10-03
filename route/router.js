@@ -2,7 +2,7 @@ import express from "express";
 import { getUsers, login, logout, register } from '../controller/users.js';
 
 import { verifyToken } from "../middleware/verifyToken.js";
-import { refreshToken } from "../controller/RefreshToken.js";
+import { refreshToken } from "../controller/refreshToken.js";
 import { checkLists } from "../controller/checklists.js";
 import { addTask } from "../controller/tasksFromManager.js";
 import { updateTaskMandatoryStatus } from "../controller/updateTaskFromStaff.js";
